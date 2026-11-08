@@ -190,3 +190,26 @@ h2{font-size:clamp(34px,10vw,56px)}
 }
 @media(max-width:700px){.phead h1{font-size:clamp(36px,11vw,70px);overflow-wrap:anywhere}}
 @media(max-width:700px){nav{position:static}.logo{font-size:22px}}
+
+/* mobile drawer menu */
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid #2b3540;background:#0d1217;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.burger i{width:5px;height:5px;border-radius:50%;background:var(--acc);display:block}
+.dov{position:fixed;inset:0;background:rgba(0,0,0,.62);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s;z-index:80}
+.dov.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(82vw,330px);background:#0a0f14;border-left:1px solid var(--line);z-index:85;transform:translateX(104%);transition:transform .45s cubic-bezier(.2,.8,.2,1);padding:22px 22px 30px;display:flex;flex-direction:column;overflow-y:auto}
+.drawer.open{transform:none}
+.drawer .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.drawer .dx{width:42px;height:42px;border-radius:50%;border:1px solid #2b3540;background:transparent;color:var(--ink);font-size:18px;cursor:pointer}
+.drawer>a{font-family:'Anton',sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.02em;padding:15px 4px;border-bottom:1px solid var(--line);color:#dfe5e1;opacity:0;transform:translateX(30px);transition:opacity .4s,transform .4s,color .2s;transition-delay:0s}
+.drawer.open>a{opacity:1;transform:none;transition-delay:calc(var(--i)*70ms + 180ms)}
+.drawer>a.cur{color:var(--acc)}
+.drawer>a.cur:before{content:"→ ";}
+.drawer>a:hover{color:var(--acc)}
+.drawer>a.dcta{margin-top:26px;border:0;text-align:center;font-family:'Inter',sans-serif;font-size:15px;color:#0a0d0f;border-radius:999px}
+@media(max-width:900px){
+.links,nav .wrap>.btn{display:none}
+.burger{display:flex}
+nav .wrap{flex-wrap:nowrap;justify-content:space-between}
+nav{position:sticky;top:0}
+}
+.fc svg{width:100%;height:auto;aspect-ratio:1;display:block}.fc{overflow:hidden}
