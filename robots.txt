@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rootclasses.com/sitemap.xml
