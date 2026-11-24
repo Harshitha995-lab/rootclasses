@@ -85,3 +85,7 @@ document.querySelectorAll('[data-rv]').forEach(function(el){var n=+el.dataset.rv
   var t='Hello Root Classes, I would like to enroll.\nStudent: '+n+'\nAdmission for: '+c+'\nContact: '+p+(m?'\nEmail: '+m:'');
   window.open('https://wa.me/919019627490?text='+encodeURIComponent(t),'_blank','noopener');
   f.innerHTML='<h3 style="font-size:34px">Thank you, '+n.replace(/[<>&"]/g,'')+'.</h3><p class="sub">Your enrolment request for '+c+' is ready. If WhatsApp did not open, please call <a href="tel:+919019627490" style="color:var(--acc)">9019627490</a>.</p>'})})();
+
+// ---- sticky call / enroll bar (mobile)
+(function(){if(document.getElementById('cbar'))return;var b=document.createElement('div');b.id='cbar';
+ b.innerHTML='<a class="cb-call" href="tel:+919019627490">Call now</a><a class="cb-enr" href="contact.html">Enroll now</a>';document.body.appendChild(b)})();
