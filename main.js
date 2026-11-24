@@ -80,6 +80,8 @@ document.querySelectorAll('[data-rv]').forEach(function(el){var n=+el.dataset.rv
   else if(m&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m))msg='Please check the email ID, or leave it blank.';
   if(msg){err.textContent=msg;err.hidden=false;return}
   err.hidden=true;
+  try{var fd=new URLSearchParams();fd.append('entry.1847352711',n);fd.append('entry.977506308',c);fd.append('entry.633697519',p);fd.append('entry.341688759',m);
+   fetch('https://docs.google.com/forms/d/e/1FAIpQLSdOozJsG5Nfv4Tp99EnemxJF1gIWiGmlWBiQSJs9Ze1DZSl4w/formResponse',{method:'POST',mode:'no-cors',body:fd})}catch(x){}
   var t='Hello Root Classes, I would like to enroll.\nStudent: '+n+'\nAdmission for: '+c+'\nContact: '+p+(m?'\nEmail: '+m:'');
   window.open('https://wa.me/919019627490?text='+encodeURIComponent(t),'_blank','noopener');
   f.innerHTML='<h3 style="font-size:34px">Thank you, '+n.replace(/[<>&"]/g,'')+'.</h3><p class="sub">Your enrolment request for '+c+' is ready. If WhatsApp did not open, please call <a href="tel:+919019627490" style="color:var(--acc)">9019627490</a>.</p>'})})();
